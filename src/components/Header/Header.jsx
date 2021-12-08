@@ -1,13 +1,11 @@
 import React from 'react';
-import './Header.css';
+import s from './Header.module.css';
 
 const Header = () => {
-    return (
-        <header className='header'>
+    return <header className={s.header}>
             <img src={'https://iconape.com/wp-content/files/gl/258010/png/Navy_Seals-logo.png'}
-                 alt='logo' className='logo'>
+                 alt='logo' >
             </img>
         </header>
-    );
 }
 export default Header;

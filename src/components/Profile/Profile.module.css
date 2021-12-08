@@ -3,9 +3,9 @@
     background-color: lightgray;
     position: relative;
 }
-.content-banner {
+.content__banner {
     max-width: 100%;
 }
-.img-banner {
+.img__banner {
     width: 100%;
 }

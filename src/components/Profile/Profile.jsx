@@ -1,12 +1,12 @@
 import React from "react";
-import './Profile.css';
-import imageSrc from "../images/military-banner.jpg";
+import s from './Profile.module.css';
+import imageSrc from "../../images/military-banner.jpg";
 
 const Profile = () => {
     return (
-            <div className='content'> Main content
-                <div className='content-banner'>
-                    <img src={imageSrc} className='img-banner'/>
+            <div className={s.content}> Main content
+                <div className={s.content__banner}>
+                    <img src={imageSrc} className={s.img__banner} alt='banner'/>
                 </div>
                 <div>ava + desription</div>
                 <div>My posts</div>
