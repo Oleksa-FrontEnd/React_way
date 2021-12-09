@@ -1,0 +1,11 @@
+.content {
+    grid-area: c;
+    background-color: lightgray;
+    position: relative;
+}
+.content__banner {
+    max-width: 100%;
+}
+.img__banner {
+    width: 100%;
+}
