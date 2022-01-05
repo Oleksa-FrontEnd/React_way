@@ -1,16 +1,16 @@
 import React from "react";
-import s from './MyPosts.module.css';
+import s from './Post.module.css';
 
-const MyPosts = () => {
+const Post = (props) => {
     return (
             <div>
-                <div>My posts</div>
-                <div>Post 1</div>
-                <div>Post 2</div>
-                <div>Post 3</div>
-                <div>Post 4</div>
+                <img className={s.avatar} src={'https://i.pinimg.com/236x/71/0b/be/710bbeba22a770883ddd9f7e04e3b79f--the-soldier-team-fortress-.jpg'}/>
+                {props.message}
+                <div>
+                    <button className='likeButton'>Like</button>
+                    {props.estimate}
+                </div>
             </div>
     );
 }
-
-export default MyPosts;
+export default Post;
