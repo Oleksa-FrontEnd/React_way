@@ -7,9 +7,20 @@
     color: red;
     padding: 10px;
 }
-
 .messages {
     color: dimgrey;
     padding-top: 10px;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+    border: 1px solid dimgrey;
+    border-radius: 50%;
+}
+.messageElement {
+    border: 1px solid darkgray;
+    border-radius: 25%;
+    display: block;
+    padding: 4px;
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
+import FavoritFriends from "./FavoritFriends";
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <nav className={s.nav}>
             <div className={`${s.item} ${s.active}`}>
@@ -17,7 +18,9 @@ const Navbar = () => {
             <div className={s.item}>
                 <NavLink to='/settings' className={navData => navData.isActive ? s.active : s.item}>Settings</NavLink>
             </div>
+            <FavoritFriends favorit = {props.favorit.favoritFriends} />
         </nav>
-    );
-}
+    )
+};
+
 export default Navbar;

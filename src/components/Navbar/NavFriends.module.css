@@ -1,0 +1,11 @@
+
+.icon {
+    width: 25px;
+    height: 25px;
+    border: 1px solid dimgrey;
+    border-radius: 50%;
+}
+.friendBlock {
+    padding: 5px;
+    text-align: center;
+}
