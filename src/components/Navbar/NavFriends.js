@@ -5,7 +5,7 @@ import ava from "../../images/bober.png";
 const NavFriends = (props) => {
     return (
         <div className={s.friendBlock}>
-            <div><img src={ava} className={s.icon} alt='image' /></div>
+            <div><img src={ava} className={s.icon} /></div>
             <span>{props.name}</span>
         </div>
     )

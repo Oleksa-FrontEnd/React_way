@@ -1,27 +1,22 @@
 import React from "react";
 import DialogsItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
-import Avatar from "./DialogsItem/Avatar";
 import s from './Dialogs.module.css';
 
 const Dialogs = (props) => {
-
-    /*let userAvatar = props.avatar.map (a => <Avatar src={a.avatar} />);*/
-
     let dialogsElement = props.users.map(d => <DialogsItem name={d.name} id={d.id} avatar={d.avatar}/>);
-
     let messagesElement = props.messages.map(m => <Message message={m.message}/>);
 
-    let addNewMessage = React.createRef();
+    let newDialogElement = React.createRef();
 
-    let addMessage = () => {
-        let text = addNewMessage.current.value;
-        alert(text);
+    let addDialog = () => {
+        let textDialog = newDialogElement.current.value;
+        alert (textDialog);
     }
+
 
     return (
         <div className={s.dialogs}>
-            {/*<Avatar src={userAvatar} />*/}
             <div className={s.dialogsItems}>
                 {dialogsElement}
             </div>
@@ -29,9 +24,9 @@ const Dialogs = (props) => {
                 {messagesElement}
             </div>
             <div>
-                <textarea ref={addNewMessage}>Add...</textarea>
+            <textarea ref={newDialogElement}>Add dialog element...</textarea>
                 <div>
-                    <button onClick={addMessage} >Add post</button>
+                    <button onClick={addDialog}>Add dialog</button>
                 </div>
             </div>
         </div>
