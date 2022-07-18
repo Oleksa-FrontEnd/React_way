@@ -14,7 +14,6 @@ const Dialogs = (props) => {
         alert (textDialog);
     }
 
-
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>

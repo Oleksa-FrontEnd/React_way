@@ -3,20 +3,25 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let postsElement = props.itemsMyPosts.map(p => <Post message={p.message} estimate={p.estimate}/>)
+    let postsElement = props.posts.map(p => <Post message={p.message} estimate={p.estimate}/>)
 
-    let NewPostElement = React.createRef();
+    let newPostElement = React.createRef();
 
     let addPost = () => {
-        let text = NewPostElement.current.value;
-        props.addPost(text);
-        NewPostElement.current.value = '';
+        props.addPost();
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
     }
     return (
         <div>
             <div>My posts</div>
             <div>
-                <textarea ref={NewPostElement}>Add...</textarea>
+                <textarea onChange={onPostChange}
+                          ref={newPostElement}
+                          value={props.newPostText} />
                 <div>
                     <button onClick={addPost}>Add post</button>
                 </div>
