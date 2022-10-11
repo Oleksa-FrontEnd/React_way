@@ -9,8 +9,8 @@ let store = {
             ],
             newPostText: "it-kamasutra.com"
         },
-        dialogsPage : {
-            dialogs : [
+        dialogsPage: {
+            dialogs: [
                 {id: '1', name: 'Dimych', avatar: './../images/54.png'},
                 {id: '2', name: 'Viktor', avatar: './../images/bober.png'},
                 {id: '3', name: 'Sveta', avatar: './../images/54.png'},
@@ -18,12 +18,12 @@ let store = {
                 {id: '5', name: 'Lora', avatar: ''},
                 {id: '6', name: 'Gleb', avatar: ''}
             ],
-            messages : [
+            messages: [
                 {id: '1', message: 'Hi!'},
                 {id: '2', message: 'How are you?'},
                 {id: '3', message: 'Super!'}
             ],
-            avatar : [
+            avatar: [
                 {id: '1', ava: 'https://i0.wp.com/pbs.twimg.com/media/Dh6Q-IOU0AIX6xl.jpg?w=730'},
                 {id: '2', ava: './../images/54.png'},
                 {id: '3', ava: ""},
@@ -32,20 +32,25 @@ let store = {
                 {id: '6', ava: ""},
             ]
         },
-        sidebar : {
+        sidebar: {
             favoritFriends: [
-                {id:1, name: "Alfa", avatar: ""},
-                {id:2, name: "Beta", avatar: ""},
-                {id:3, name: "Omega", avatar: ""}
+                {id: 1, name: "Alfa", avatar: ""},
+                {id: 2, name: "Beta", avatar: ""},
+                {id: 3, name: "Omega", avatar: ""}
             ]
         }
     },
-    getStore(){
+    getStore() {
         return this._state
     },
     _callSubscriber() {
-        console.log('State changed')},
-    addPost () {
+        console.log('State changed')
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer
+    },
+
+    /*addPost() {
         let newPost = {
             id: 5,
             message: this._state.profilePage.newPostText,
@@ -55,12 +60,26 @@ let store = {
         this._state.profilePage.newPostText = ('');
         this._callSubscriber(this._state);
     },
-    updateNewPostText (newText) {
+    updateNewPostText(newText) {
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
-    },
-    subscribe(observer) {
-        this._callSubscriber = observer
+    },*/
+
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                estimate: 0
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = ('');
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 }
 
