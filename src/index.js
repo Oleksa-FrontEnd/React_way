@@ -12,8 +12,6 @@ import App from "./App";
             <BrowserRouter>
                 <App state={store.getStore()}
                      dispatch={store.dispatch.bind(store)}
-                     //addPost={store.addPost.bind(store)}
-                     //updateNewPostText={store.updateNewPostText.bind(store)}
                 />
             </BrowserRouter>
         </React.StrictMode>,
